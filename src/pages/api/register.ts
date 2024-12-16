@@ -3,6 +3,8 @@ import { openDB } from '@/lib/db';
 import bcrypt from 'bcrypt';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  console.log('Request method:', req.method);
+  console.log('Request body:', req.body);
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Metod yaroqsiz' });
   }
